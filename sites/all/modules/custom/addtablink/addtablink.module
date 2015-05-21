@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * add a 'delete' tab link on node page, easy to delete current node
+ */
+/**
+ * hook_help()
+ */
+
+/**
+ * hook_menu()
+ */
+function addtablink_menu() {
+  $items['node/%node/addtablink'] = array(
+    'title' => 'Delete',
+    'page callback' => 'tablink_delete_page',
+    'page arguments' => array(1),
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+  );
+
+  return $items;
+}
+
+function tablink_delete_page($nid) {
+  drupal_goto('node/' . arg(1) . '/delete');
+  // drupal_goto('node/' . arg(1) . '/delete');
+}

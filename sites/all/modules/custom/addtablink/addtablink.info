@@ -1,0 +1,5 @@
+name = Add a Tab Menu link
+description = Add a Tab Menu link on node page to delete current node
+core = 6.x
+package = Zen Development
+version = 6.x-dev
